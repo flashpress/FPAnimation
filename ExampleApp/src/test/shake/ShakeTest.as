@@ -1,24 +1,24 @@
 /**
  * Created by sam on 18.04.16.
  */
-package test
+package test.shake
 {
     import flash.display.Shape;
     import flash.display.Sprite;
 
     import ru.flashpress.animation.FPAnimation;
     import ru.flashpress.animation.FPInterval;
-    import ru.flashpress.animation.FPLoop;
+    import ru.flashpress.animation.modify.FPLoop;
     import ru.flashpress.animation.display.alphaFromTo;
     import ru.flashpress.animation.display.moveFromToY;
     import ru.flashpress.animation.display.shakeOn;
     import ru.flashpress.animation.group.sequence;
     import ru.flashpress.animation.group.sync;
     import ru.flashpress.animation.instant.setProperty;
-    import ru.flashpress.animation.loop;
     import ru.flashpress.animation.modify.FPReverse;
     import ru.flashpress.animation.modify.ease.elasticOut;
-    import ru.flashpress.animation.reverse;
+    import ru.flashpress.animation.modify.loop;
+    import ru.flashpress.animation.modify.reverse;
     import ru.flashpress.animation.timeout;
 
     public class ShakeTest extends Sprite
@@ -40,7 +40,7 @@ package test
             var rootAnim:FPInterval = sync([elasticOut(moveFromToY(100, 300, 1000), 0), shakeOn('rotation', -30, 1000, null), alphaFromTo(0, 1, 300)]);
             //
             // Create reverse animation
-            var reverseAnim:FPReverse = reverse(rootAnim);
+            var reverseAnim:FPReverse = reverse(rootAnim, 0);
             //
             // Loop animation
             var loopAnim:FPLoop = loop(sequence([setProperty('rotation', 0), rootAnim, reverseAnim, timeout(1000)]), 0, 0);

@@ -10,7 +10,7 @@ package ru.flashpress.animation.display {
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function createTo(toX:Number, toY:Number, toZ:Number, duration:Number=0):FPRotate3D
         {
             var animation:FPRotate3D;
@@ -48,12 +48,12 @@ package ru.flashpress.animation.display {
             return animation;
         }
 
-        protected var toX:Number;
-        protected var toY:Number;
-        protected var toZ:Number;
-        protected var fromX:Number;
-        protected var fromY:Number;
-        protected var fromZ:Number;
+        nsFPAnimation var toX:Number;
+        nsFPAnimation var toY:Number;
+        nsFPAnimation var toZ:Number;
+        nsFPAnimation var fromX:Number;
+        nsFPAnimation var fromY:Number;
+        nsFPAnimation var fromZ:Number;
         public function FPRotate3D()
         {
             super();

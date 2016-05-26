@@ -11,7 +11,7 @@ package ru.flashpress.animation.modify {
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function createLinear(animation:FPInterval, height:Number=1, count:int=1, duration:int=0):FPWave
         {
             var _animation:FPWave;
@@ -47,8 +47,8 @@ package ru.flashpress.animation.modify {
             return _animation;
         }
 
-        private var heights:Vector.<Number>;
-        private var count:int;
+        nsFPAnimation var heights:Vector.<Number>;
+        nsFPAnimation var count:int;
         public function FPWave()
         {
             super();
@@ -69,6 +69,7 @@ package ru.flashpress.animation.modify {
             if (index >= count) index = count-1;
             position = Math.sin(position*Math.PI);
             _animation.setWave(heights[index]*position);
+            _animation.applyPosition(position);
         }
 
         public override function release():void

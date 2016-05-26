@@ -3,10 +3,11 @@
  */
 package {
 
-    import test.ShakeTest;
+    import test.card.CardTest;
+    import test.shake.ShakeTest;
 
-    [SWF(width="600", height="600", frameRate="60")]
-    public class App extends ShakeTest
+    [SWF(width="800", height="600", frameRate="60")]
+    public class App extends CardTest
     {
         public function App()
         {

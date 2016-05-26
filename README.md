@@ -1,6 +1,6 @@
 # FPAnimation
 
-## Shake anim example
+## Shake animation example
 Gif result:
 
 <img src="images/shake_anim.gif" data-canonical-src="images/shake_anim.gif" width="150" />
@@ -50,3 +50,11 @@ var loopAnim:FPLoop = FPLoop.create(sequenceAnim);
 loopAnim.target = shape;
 loopAnim.play();
 ```
+
+
+## Card animation example
+
+Gif result:
+
+<img src="images/card_anim.gif" data-canonical-src="images/card_anim.gif" />
+

@@ -1,7 +1,8 @@
 /**
  * Created by sam on 06.11.15.
  */
-package ru.flashpress.animation {
+package ru.flashpress.animation.modify {
+    import ru.flashpress.animation.*;
     import ru.flashpress.animation.core.constants.FPAnimFlags;
     import ru.flashpress.animation.core.FPPool;
     import ru.flashpress.animation.core.nsFPAnimation;

@@ -69,9 +69,6 @@ package ru.flashpress.animation.display
 
         nsFPAnimation override function applyPosition(position:Number):void
         {
-            if (this.name == 'scaleIn') {
-                //trace('applyPosition:', fromX, toX, position);
-            }
             currentTarget["scaleX"] = fromX + (toX-fromX)*position+_wave + _wave;
             currentTarget["scaleY"] = fromY + (toY-fromY)*position+_wave + _wave;
             //
@@ -80,7 +77,6 @@ package ru.flashpress.animation.display
 
         protected override function initFromValue():void
         {
-            if (this.name == 'scaleIn') trace('------------------------- initFromValue:', currentTarget["scaleX"]);
             fromX = currentTarget["scaleX"];
             fromY = currentTarget["scaleY"];
         }
