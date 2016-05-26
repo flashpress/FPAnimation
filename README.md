@@ -5,7 +5,7 @@ Gif result:
 
 <img src="images/shake_anim.gif" data-canonical-src="images/shake_anim.gif" width="150" />
 
-Source code
+Source code with **[Inline]** functions:
 ```ActionScript
 FPAnimation.init(stage);
 //
@@ -26,6 +26,27 @@ var reverseAnim:FPReverse = reverse(rootAnim);
 //
 // Loop animation
 var loopAnim:FPLoop = loop(sequence([setProperty('rotation', 0), rootAnim, reverseAnim, timeout(1000)]), 0, 0);
+loopAnim.target = shape;
+loopAnim.play();
+```
+
+Source code without **[Inline]** functions: 
+```ActionScript
+// Create sync animation for moveY + Shake + Alpha
+var moveAnim:FPMove = FPMove.createFromToY(100, 300, 1000);
+var easeMove:FPEase = FPEase.create(FPEase.ELASTIC_OUT, moveAnim);
+var shakeAnim:FPShake = FPShake.create('rotation', -30, 1000);
+var alphaAnim:FPAlpha = FPAlpha.createFromTo(0, 1, 300);
+var rootAnim:FPSync = FPSync.create(easeMove, shakeAnim, alphaAnim);
+//
+// Create reverse animation
+var reverseAnim:FPReverse = FPReverse.create(rootAnim);
+//
+// Loop animation
+var setInitProperty:FPSetProperty = FPSetProperty.create('rotation', 0);
+var timeout:FPTimeout = FPTimeout.create(1000);
+var sequenceAnim:FPSequence = FPSequence.create(setInitProperty, rootAnim, reverseAnim, timeout);
+var loopAnim:FPLoop = FPLoop.create(sequenceAnim);
 loopAnim.target = shape;
 loopAnim.play();
 ```
