@@ -51,7 +51,7 @@ package test.card {
             //
             var flipBackAnim:FPInterval = sync([reverse(flipAnim, duration3), moveFromToX(550, 100, duration3)]);
             //
-            var animation:FPInterval = loop(sequence([timeout(10000), flipGoAnim, strongOut(flipBackAnim, 0), timeout(1000)]), 0, 0);
+            var animation:FPInterval = loop(sequence([flipGoAnim, strongOut(flipBackAnim, 0), timeout(1000)]), 0, 0);
             animation.target = cardView;
             animation.play();
         }
