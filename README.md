@@ -1,5 +1,7 @@
 # FPAnimation
-```
+
+Example shake anim
+```ActionScript
 FPAnimation.init(stage);
 //
 var shape:Shape = new Shape();
@@ -22,4 +24,7 @@ var loopAnim:FPLoop = loop(sequence([setProperty('rotation', 0), rootAnim, rever
 loopAnim.target = shape;
 loopAnim.play();
 ```
+
+Gif result:
+
 ![](images/shake_anim.gif)
