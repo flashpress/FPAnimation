@@ -58,3 +58,4 @@ Gif result:
 
 <img src="images/card_anim.gif" data-canonical-src="images/card_anim.gif" />
 
+Source code: <a href="https://github.com/flashpress/FPAnimation/blob/master/ExampleApp/src/test/card/CardTest.as">ExampleApp/../CardTest.as</a>
