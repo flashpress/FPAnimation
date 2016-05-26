@@ -1,6 +1,11 @@
 # FPAnimation
 
-Example shake anim
+## Shake anim example
+Gif result:
+
+<img src="images/shake_anim.gif" data-canonical-src="images/shake_anim.gif" width="150" />
+
+Source code
 ```ActionScript
 FPAnimation.init(stage);
 //
@@ -24,7 +29,3 @@ var loopAnim:FPLoop = loop(sequence([setProperty('rotation', 0), rootAnim, rever
 loopAnim.target = shape;
 loopAnim.play();
 ```
-
-Gif result:
-
-![](images/shake_anim.gif)
