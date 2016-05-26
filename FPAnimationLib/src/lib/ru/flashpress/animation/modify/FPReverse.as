@@ -10,7 +10,7 @@ package ru.flashpress.animation.modify {
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create(animation:FPInterval, duration:int=0):FPReverse
         {
             var _animation:FPReverse;

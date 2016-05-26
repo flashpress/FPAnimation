@@ -11,7 +11,7 @@ package ru.flashpress.animation {
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create(animation:FPInterval, count:int=0, duration:int=0):FPLoop
         {
             var _animation:FPLoop;
@@ -25,7 +25,7 @@ package ru.flashpress.animation {
             return _animation;
         }
 
-        private var count:int;
+        nsFPAnimation var count:int;
         //
         private var repeatCount:int;
         public function FPLoop()

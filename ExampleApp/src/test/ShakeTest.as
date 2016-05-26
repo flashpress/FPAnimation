@@ -18,6 +18,7 @@ package test
     import ru.flashpress.animation.loop;
     import ru.flashpress.animation.modify.FPReverse;
     import ru.flashpress.animation.modify.ease.elasticOut;
+    import ru.flashpress.animation.reverse;
     import ru.flashpress.animation.timeout;
 
     public class ShakeTest extends Sprite
@@ -35,11 +36,11 @@ package test
             this.addChild(shape);
             //
             //
-            // Create animation for moveY + Shake + Alpha
+            // Create sync animation for moveY + Shake + Alpha
             var rootAnim:FPInterval = sync([elasticOut(moveFromToY(100, 300, 1000), 0), shakeOn('rotation', -30, 1000, null), alphaFromTo(0, 1, 300)]);
             //
             // Create reverse animation
-            var reverseAnim:FPReverse = FPReverse.create(rootAnim);
+            var reverseAnim:FPReverse = reverse(rootAnim);
             //
             // Loop animation
             var loopAnim:FPLoop = loop(sequence([setProperty('rotation', 0), rootAnim, reverseAnim, timeout(1000)]), 0, 0);

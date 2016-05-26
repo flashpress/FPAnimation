@@ -8,7 +8,7 @@ package ru.flashpress.animation {
     public class FPTimeout extends FPInterval
     {
         use namespace nsFPAnimation;
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create(duration:int):FPTimeout
         {
             var _animation:FPTimeout;
