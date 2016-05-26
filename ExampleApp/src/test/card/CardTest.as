@@ -49,9 +49,9 @@ package test.card {
             var bounceAnim:FPInterval = sync([strongOut(moveFromToX(450, 550, duration2), 0), waveVariable(scaleTo(0.7, duration2*0.6), new <Number>[0.1, .02], 0)]);
             var flipGoAnim:FPInterval = sequence([sync([flipAnim, moveFromToX(100, 450, duration1)]), bounceAnim]);
             //
-            var flipBackAnim:FPInterval = sync([reverse(flipAnim, duration3), moveFromToX(550, 100, duration3)]);
+            var flipBackAnim:FPInterval = strongOut(sync([reverse(flipAnim, duration3), moveFromToX(550, 100, duration3)]), 0);
             //
-            var animation:FPInterval = loop(sequence([flipGoAnim, strongOut(flipBackAnim, 0), timeout(1000)]), 0, 0);
+            var animation:FPInterval = loop(sequence([flipGoAnim, flipBackAnim, timeout(1000)]), 0, 0);
             animation.target = cardView;
             animation.play();
         }
