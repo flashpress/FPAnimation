@@ -41,7 +41,10 @@ package ru.flashpress.animation.modify {
             if (count && repeatCount >= count) {
                 super.complete();
             } else {
-                updatePosition(0);
+                /**
+                 * убрал, потому что если в sequence есть прямая анимация reverse, то reverse отменяет действие прямой
+                 */
+                //updatePosition(0);
                 begin(); // что бы сбросить FPInstant.activated
                 beginPlay();
             }
