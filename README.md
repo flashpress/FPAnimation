@@ -1,4 +1,7 @@
 # FPAnimation
+ * [Shake animation example](#shake-animation-example)
+ * [Card animation example](#card-animation-example)
+
 
 ## Shake animation example
 Gif result:
