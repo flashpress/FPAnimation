@@ -12,7 +12,7 @@ package ru.flashpress.animation.instant
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create(target:*):FPAddToParent
         {
             var animation:FPAddToParent;
@@ -25,7 +25,7 @@ package ru.flashpress.animation.instant
             return animation;
         }
 
-        private var _target:*;
+        nsFPAnimation var _target:*;
         public function FPAddToParent()
         {
             super();

@@ -21,12 +21,23 @@ package ru.flashpress.display
             animsByName = {};
         }
 
+        private var _name:String;
+        public function get name():String {return _name;}
+        public function set name(value:String):void
+        {
+            _name = value;
+        }
+
         public function runAnimation(animation:FPInterval, name:String=null, autorelease:Boolean=true):FPInterval
         {
             if (!name) name = 'root';
             if (autorelease) animation.autorelease();
             //
-            var anim:Anim = animsByName[name] ? animsByName[name] : new Anim(target, name);
+            var anim:Anim = animsByName[name];
+            if (!anim) {
+                anim = new Anim(target, name, _name);
+                animsByName[name] = anim;
+            }
             anim.start(animation);
             return animation;
         }
@@ -84,17 +95,20 @@ import ru.flashpress.animation.FPInterval;
 
 class Anim
 {
-    public var target:*, name:String;
-    public function Anim(target:*, name:String)
+    public var target:*;
+    public var animationName:String;
+    private var animatorName:String;
+    public function Anim(target:*, animationName:String, animatorName:String)
     {
         this.target = target;
-        this.name = name;
+        this.animationName = animationName;
+        this.animatorName = animatorName;
     }
 
     private var _animation:FPInterval;
     public function start(anim:FPInterval):void
     {
-        stop(anim);
+        stop();
         _animation = anim;
         _animation.registerCompleteCallback(completeCallback);
         if (!_animation.target) _animation.target = target;

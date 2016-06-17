@@ -9,7 +9,7 @@ package ru.flashpress.animation.instant {
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create(func:Function, ...parameters):FPCallback
         {
             var animation:FPCallback;
@@ -23,8 +23,8 @@ package ru.flashpress.animation.instant {
             return animation;
         }
 
-        private var func:Function;
-        private var parameters:Array;
+        nsFPAnimation var func:Function;
+        nsFPAnimation var parameters:Array;
         public function FPCallback()
         {
             super();

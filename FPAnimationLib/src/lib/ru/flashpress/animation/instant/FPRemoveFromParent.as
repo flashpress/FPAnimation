@@ -11,7 +11,7 @@ package ru.flashpress.animation.instant
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create():FPRemoveFromParent
         {
             var animation:FPRemoveFromParent;

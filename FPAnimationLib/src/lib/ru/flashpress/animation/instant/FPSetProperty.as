@@ -9,7 +9,7 @@ package ru.flashpress.animation.instant {
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create(property:String, value:*):FPSetProperty
         {
             var animation:FPSetProperty;
@@ -34,8 +34,8 @@ package ru.flashpress.animation.instant {
             this.value = value;
         }
 
-        private var property:String;
-        private var value:*;
+        nsFPAnimation var property:String;
+        nsFPAnimation var value:*;
         public override function activate():void
         {
             super.activate();

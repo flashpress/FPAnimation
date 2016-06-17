@@ -9,7 +9,7 @@ package ru.flashpress.animation.instant {
     {
         use namespace nsFPAnimation;
 
-        private static var pool:FPPool;
+        nsFPAnimation static var pool:FPPool;
         public static function create(visible:Boolean):FPVisible
         {
             var animation:FPVisible;
@@ -35,7 +35,7 @@ package ru.flashpress.animation.instant {
             super();
         }
 
-        private var visibleValue:Boolean;
+        nsFPAnimation var visibleValue:Boolean;
         public override function activate():void
         {
             super.activate();
